@@ -9,7 +9,7 @@
   <browser:viewlet
      name="leichte-sprache-viewlet"
      for="plone.app.contenttypes.interfaces.IDocument"
-     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
      layer="nva.viewlets.interfaces.INvaViewletsLayer"
      class=".leichte_sprache_viewlet.LeichteSpracheViewlet"
      template="leichte-sprache-viewlet.pt"

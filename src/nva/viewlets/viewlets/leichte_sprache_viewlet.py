@@ -6,10 +6,16 @@ from plone.app.layout.viewlets import ViewletBase
 class LeichteSpracheViewlet(ViewletBase):
 
     def update(self):
-        self.message = self.get_message()
+        self.leichtesprache = self.get_leichtesprache()
 
-    def get_message(self):
-        return u'My message'
+    def get_leichtesprache(self):
+        if hasattr(self.context, 'leichtesprache'):
+            if self.context.leichtesprache:
+                return self.context.leichtesprache.output
 
     def render(self):
-        return super(LeichteSpracheViewlet, self).render()
+        if hasattr(self.context, 'leichtesprache'):
+            if self.context.leichtesprache:
+                return super(LeichteSpracheViewlet, self).render()
+        else:
+            return ""
