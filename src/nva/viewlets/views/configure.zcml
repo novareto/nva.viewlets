@@ -1,0 +1,18 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="nva.viewlets">
+
+  -*- extra stuff goes here -*-
+
+  <browser:page
+     name="leichte-sprache"
+     for="Products.CMFCore.interfaces.IFolderish"
+     class=".leichte_sprache.LeichteSprache"
+     template="leichte-sprache.pt"
+     permission="zope2.View"
+     />
+
+
+</configure>
