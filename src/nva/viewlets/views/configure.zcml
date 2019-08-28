@@ -8,7 +8,7 @@
 
   <browser:page
      name="leichte-sprache"
-     for="Products.CMFCore.interfaces.IFolderish"
+     for="zope.interface.Interface"
      class=".leichte_sprache.LeichteSprache"
      template="leichte-sprache.pt"
      permission="zope2.View"
