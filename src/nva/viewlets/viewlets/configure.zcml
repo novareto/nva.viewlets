@@ -7,6 +7,16 @@
   -*- extra stuff goes here -*-
 
   <browser:viewlet
+     name="mastercards-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="nva.viewlets.interfaces.INvaViewletsLayer"
+     class=".mastercards_viewlet.MastercardsViewlet"
+     template="mastercards-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
      name="titelbild-viewlet"
      for="*"
      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
