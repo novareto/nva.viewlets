@@ -1,4 +1,4 @@
-<div class="bd-example mt-n5" tal:define="titelbilder view/get_titelbilder" tal:condition="python:len(titelbilder) > 1">
+<div class="bd-example mt-n5 mb-3" tal:define="titelbilder view/get_titelbilder" tal:condition="python:len(titelbilder) > 1">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -7,19 +7,19 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <div class="card mb-3">
-          <img class="card-img-top" tal:attributes="src python:titelbilder[0]['imgsrc']; alt python:titelbilder[0]['description']">
-          <div class="card-body">
-		  <!--<h5 class="card-title" tal:content="python:titelbilder[0]['title']">Card title</h5>-->
+        <div class="card bg-dark text-white">
+          <img class="card-img" tal:attributes="src python:titelbilder[0]['imgsrc']; alt python:titelbilder[0]['description']">
+          <div class="card-img-overlay">
+            <h5 class="card-title" tal:content="python:titelbilder[0]['title']"></h5>
             <p class="card-text" tal:content="python:titelbilder[0]['description']"></p>
           </div>
         </div>
       </div>
       <div tal:condition="python: len(titelbilder) > 1" tal:repeat="titelbild python:titelbilder[1:]" class="carousel-item">
-        <div class="card mb-3">
-          <img class="card-img-top" tal:attributes="src titelbild/imgsrc; alt titelbild/description">
-          <div class="card-body">
-		  <!--<h5 class="card-title" tal:content="titelbild/title">Card title</h5>-->
+        <div class="card bg-dark text-white">
+          <img class="card-img" tal:attributes="src titelbild/imgsrc; alt titelbild/description">
+          <div class="card-img-overlay">
+            <h5 class="card-title" tal:content="titelbild/title"></h5>
             <p class="card-text" tal:content="titelbild/description"></p>
           </div>
         </div>
@@ -35,8 +35,13 @@
     </a>
   </div>
 </div>
-<figure tal:define="titelbilder view/get_titelbilder;titelbild python:titelbilder[0]" tal:condition="python:len(titelbilder) == 1" 
-	class="figure mt-n5">
-  <img tal:attributes="src titelbild/imgsrc; title titelbild/title; alt titelbild/description" class="figure-img img-fluid rounded">
-  <figcaption class="figure-caption" tal:content="titelbild/description"></figcaption>
-</figure>
+<div tal:define="titelbilder view/get_titelbilder;titelbild python:titelbilder[0]" tal:condition="python:len(titelbilder) == 1" 
+	class="figure mt-n5 mb-3">
+  <div class="card bg-dark text-white">
+    <img class="card-img" tal:attributes="src titelbild/imgsrc; alt titelbild/description">
+    <div class="card-img-overlay">
+      <h5 class="card-title" tal:content="titelbild/title"></h5>
+      <p class="card-text" tal:content="titelbild/description"></p>
+    </div>
+  </div>
+</div>

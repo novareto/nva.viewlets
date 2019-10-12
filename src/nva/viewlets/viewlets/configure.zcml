@@ -8,11 +8,21 @@
 
   <browser:viewlet
      name="titelbild-viewlet"
-     for="plone.app.contenttypes.interfaces.IDocument"
+     for="*"
      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
      layer="nva.viewlets.interfaces.INvaViewletsLayer"
      class=".titelbild_viewlet.TitelbildViewlet"
      template="titelbild-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+     name="titelcard-viewlet"
+     for="*"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="nva.viewlets.interfaces.INvaViewletsLayer"
+     class=".titelcard_viewlet.TitelcardViewlet"
+     template="titelcard-viewlet.pt"
      permission="zope2.View"
      />
 
