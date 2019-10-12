@@ -8,8 +8,8 @@
 
   <browser:viewlet
      name="mastercards-viewlet"
-     for="plone.app.contenttypes.interfaces.IDocument"
-     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     for="*"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
      layer="nva.viewlets.interfaces.INvaViewletsLayer"
      class=".mastercards_viewlet.MastercardsViewlet"
      template="mastercards-viewlet.pt"

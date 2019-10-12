@@ -1,3 +1,8 @@
-<div class="days_to_conf">
-    ${view/message}
+<hr>
+<div tal:repeat="cards view/get_cards" class="card-deck mb-3">
+<div tal:repeat="card cards" class="card border-primary mb-3" style="max-width: 18rem;">
+  <div class="card-header" tal:content="card/title">Header</div>
+  <img class="card-img-top" tal:condition="card/imageurl" tal:attributes="src card/imageurl;alt card/imagedesc;title card/imagetitle">
+  <div tal:condition="python:card.get('type')!='Image'" class="card-body text-primary" tal:content="structure card/text"></div>
+</div>
 </div>
