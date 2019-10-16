@@ -13,9 +13,19 @@ class TitelbildViewlet(ViewletBase):
             entry['imgsrc'] = "%s/@@images/image" % obj.absolute_url()
             entry['title'] = obj.title
             entry['description'] = obj.description
-            entry['reference'] = ""
+            entry['reference'] = "#"
+            entry['reftitle'] = ''
             if obj.relatedItems:
                 entry['reference'] = obj.relatedItems[0].to_object.absolute_url()
+                entry['reftitle'] = obj.relatedItems[0].to_object.title
+            if 'newsurl' in obj.__dict__:
+                if obj.newsurl:
+                    entry['reference'] = obj.newsurl.to_object.absolute_url()
+                    entry['reftitle'] = obj.newsurl.to_object.title
+            if 'extnews' in obj.__dict__:
+                if obj.extnews:
+                    entry['reference'] = obj.extnews
+                    entry['reftitle'] = obj.extnewstitle
             entry['slide'] = index
             titelbilder.append(entry)
         return titelbilder

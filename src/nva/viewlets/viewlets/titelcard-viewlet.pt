@@ -7,6 +7,7 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
+        <a href="#" tal:attributes="href python:titelbilder[0]['reference']; title python:titelbilder[0]['reftitle']">
         <div class="card bg-dark text-white">
           <img class="card-img" tal:attributes="src python:titelbilder[0]['imgsrc']; alt python:titelbilder[0]['description']">
           <div class="card-img-overlay">
@@ -14,8 +15,10 @@
             <p class="card-text" tal:content="python:titelbilder[0]['description']"></p>
           </div>
         </div>
+	</a>
       </div>
       <div tal:condition="python: len(titelbilder) > 1" tal:repeat="titelbild python:titelbilder[1:]" class="carousel-item">
+	<a href="#" tal:attributes="href titelbild/reference; title titelbild/reftitle">
         <div class="card bg-dark text-white">
           <img class="card-img" tal:attributes="src titelbild/imgsrc; alt titelbild/description">
           <div class="card-img-overlay">
@@ -23,6 +26,7 @@
             <p class="card-text" tal:content="titelbild/description"></p>
           </div>
         </div>
+	</a>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
@@ -37,6 +41,7 @@
 </div>
 <div tal:define="titelbilder view/get_titelbilder;titelbild python:titelbilder[0]" tal:condition="python:len(titelbilder) == 1" 
 	class="figure mt-n5 mb-3">
+  <a href="#" tal:attributes="href titelbild/reference; title titelbild/reftitle">
   <div class="card bg-dark text-white">
     <img class="card-img" tal:attributes="src titelbild/imgsrc; alt titelbild/description">
     <div class="card-img-overlay">
@@ -44,4 +49,5 @@
       <p class="card-text" tal:content="titelbild/description"></p>
     </div>
   </div>
+  </a>
 </div>

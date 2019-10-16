@@ -18,4 +18,12 @@
       directory="static"
       />
 
+  <browser:viewletManager
+    name="nva.contentcards"
+    provides="nva.viewlets.interfaces.IContentCardsViewletManager"
+    class="plone.app.viewletmanager.manager.OrderedViewletManager"
+    layer="plonetheme.siguv.interfaces.IPlonethemeSiguvLayer"
+    permission="zope2.View"
+    />
+
 </configure>

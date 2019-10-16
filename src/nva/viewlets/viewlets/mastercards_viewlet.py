@@ -16,8 +16,13 @@ class MastercardsViewlet(ViewletBase):
         return []
 
     def render(self):
-        if self.context.layout in hide_layouts:
-            return ""
+        try:
+            layout = self.context.layout
+        except:
+            layout = ''
+        if layout:    
+            if self.context.layout in hide_layouts:
+                return ""
         if hasattr(self.context, 'cards'):
             if self.context.cards:
                 return super(MastercardsViewlet, self).render()
