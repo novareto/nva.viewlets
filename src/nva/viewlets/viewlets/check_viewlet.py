@@ -12,4 +12,5 @@ class CheckViewlet(ViewletBase):
         return u'My message'
 
     def render(self):
+        return ""
         return super(CheckViewlet, self).render()

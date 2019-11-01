@@ -17,12 +17,12 @@
      />
 
   <browser:viewlet
-     name="mastercards-viewlet"
+     name="contentcards-viewlet"
      for="*"
-     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+     manager="nva.viewlets.interfaces.IContentCardsViewletManager"
      layer="nva.viewlets.interfaces.INvaViewletsLayer"
-     class=".mastercards_viewlet.MastercardsViewlet"
-     template="mastercards-viewlet.pt"
+     class=".contentcards_viewlet.ContentCardsViewlet"
+     template="contentcards-viewlet.pt"
      permission="zope2.View"
      />
 
