@@ -1,4 +1,5 @@
-<div class="bd-example mt-n5" tal:define="titelbilder view/get_titelbilder" tal:condition="python:len(titelbilder) > 1">
+<div class="bd-example mt-n5" tal:define="titelbilder view/get_titelbilder" 
+     tal:condition="python:context.viewlet == 'header' and len(titelbilder) > 1">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -39,10 +40,13 @@
     </a>
   </div>
 </div>
-<figure tal:define="titelbilder view/get_titelbilder;titelbild python:titelbilder[0]" tal:condition="python:len(titelbilder) == 1" 
+<figure tal:condition="python:context.viewlet == 'header' and len(view.get_titelbilder()) == 1" 
 	class="figure mt-n5">
-  <a href="#" tal:attributes="href titelbild/reference; title titelbild/reftitle">
+  <a tal:define="titelbild python:view.get_titelbilder()[0]" href="#" tal:attributes="href titelbild/reference; title titelbild/reftitle">
   <img tal:attributes="src titelbild/imgsrc; title titelbild/title; alt titelbild/description" class="figure-img img-fluid rounded">
   </a>
-  <figcaption class="figure-caption" tal:content="titelbild/description"></figcaption>
+  <figcaption tal:define="titelbild python:view.get_titelbilder()[0]" class="figure-caption" tal:content="titelbild/description"></figcaption>
 </figure>
+<div tal:condition="python:context.viewlet == 'video'" class="shadow border embed-responsive embed-responsive-16by9 mt-n3 mb-3">
+	<span tal:replace="structure context/embedcode"/>
+</div>

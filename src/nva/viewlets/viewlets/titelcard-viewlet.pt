@@ -1,4 +1,4 @@
-<div class="bd-example mt-n5 mb-3" tal:define="titelbilder view/get_titelbilder" tal:condition="python:len(titelbilder) > 1">
+<div class="bd-example mt-n5" tal:define="titelbilder view/get_titelbilder" tal:condition="python:len(titelbilder) > 1">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
