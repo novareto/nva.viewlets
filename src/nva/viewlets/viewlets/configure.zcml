@@ -37,6 +37,16 @@
      />
 
   <browser:viewlet
+     name="titelembed-viewlet"
+     for="*"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="nva.viewlets.interfaces.INvaViewletsLayer"
+     class=".titelembed_viewlet.TitelembedViewlet"
+     template="titelembed-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
      name="titelcard-viewlet"
      for="*"
      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"

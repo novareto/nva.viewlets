@@ -35,10 +35,4 @@ class TitelbildViewlet(ViewletBase):
             if 'titleimages' in self.context.__dict__:
                 if self.context.titleimages and self.context.viewlet == 'header':
                     return super(TitelbildViewlet, self).render()
-            if 'embedcode' in self.context.__dict__:
-                if self.context.embedcode and self.context.viewlet == 'video':
-                    return super(TitelbildViewlet, self).render()
-            else:
-                return ""
-        else:
-            return ""
+        return u""

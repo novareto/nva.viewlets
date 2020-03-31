@@ -13,7 +13,6 @@
           <img class="card-img-top" tal:attributes="src python:titelbilder[0]['imgsrc']; alt python:titelbilder[0]['description']">
 	  </a>
           <div class="card-body">
-            <!--<h5 class="card-title" tal:content="python:titelbilder[0]['title']">Card title</h5>-->
             <p class="card-text" tal:content="python:titelbilder[0]['description']"></p>
           </div>
         </div>
@@ -24,7 +23,6 @@
           <img class="card-img-top" tal:attributes="src titelbild/imgsrc; alt titelbild/description">
 	  </a>
           <div class="card-body">
-		  <!--<h5 class="card-title" tal:content="titelbild/title">Card title</h5>-->
             <p class="card-text" tal:content="titelbild/description"></p>
           </div>
         </div>
@@ -47,6 +45,3 @@
   </a>
   <figcaption tal:define="titelbild python:view.get_titelbilder()[0]" class="figure-caption" tal:content="titelbild/description"></figcaption>
 </figure>
-<div tal:condition="python:context.viewlet == 'video'" class="shadow border embed-responsive embed-responsive-16by9 mt-n3 mb-3">
-	<span tal:replace="structure context/embedcode"/>
-</div>
