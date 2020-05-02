@@ -18,6 +18,7 @@ class LeichteSpracheViewlet(ViewletBase):
         return button
 
     def render(self):
+        return u""
         if hasattr(self.context, 'leichtesprache'):
             if self.context.leichtesprache:
                 return super(LeichteSpracheViewlet, self).render()
