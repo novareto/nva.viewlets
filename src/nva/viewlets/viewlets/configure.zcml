@@ -7,6 +7,16 @@
   -*- extra stuff goes here -*-
 
   <browser:viewlet
+     name="dachzeile-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="nva.viewlets.interfaces.INvaViewletsLayer"
+     class=".dachzeile_viewlet.DachzeileViewlet"
+     template="dachzeile-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
      name="check-viewlet"
      for="*"
      manager="nva.viewlets.interfaces.IContentCardsViewletManager"
