@@ -1,3 +1,1 @@
-<div class="days_to_conf">
-    ${view/message}
-</div>
+<p class="roof text-uppercase mb-1" tal:content="view/dachzeile"></p>

@@ -8,7 +8,7 @@
 
   <browser:viewlet
      name="dachzeile-viewlet"
-     for="plone.app.contenttypes.interfaces.IDocument"
+     for="*"
      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
      layer="nva.viewlets.interfaces.INvaViewletsLayer"
      class=".dachzeile_viewlet.DachzeileViewlet"
