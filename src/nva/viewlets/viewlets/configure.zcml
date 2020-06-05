@@ -17,9 +17,9 @@
      />
 
   <browser:viewlet
-     name="document-actions-viewlet"
-     for="plone.app.contenttypes.interfaces.IDocument"
-     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     name="nva.document-actions-viewlet"
+     for="*"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContent"
      layer="nva.viewlets.interfaces.INvaViewletsLayer"
      class=".document_actions_viewlet.DocumentActionsViewlet"
      template="document-actions-viewlet.pt"
