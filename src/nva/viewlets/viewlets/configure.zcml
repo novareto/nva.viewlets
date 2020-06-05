@@ -19,7 +19,7 @@
   <browser:viewlet
      name="nva.document-actions-viewlet"
      for="*"
-     manager="plone.app.layout.viewlets.interfaces.IBelowContent"
+     manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
      layer="nva.viewlets.interfaces.INvaViewletsLayer"
      class=".document_actions_viewlet.DocumentActionsViewlet"
      template="document-actions-viewlet.pt"

@@ -1,11 +1,13 @@
 <div id="document_actions" class="container" tal:define="normalizeString nocall: context/@@plone/normalizeString;">
-  <ul>
-    <li tal:condition="view/webcode">
-      <span class="action_icon"></span>Webcode: <span tal:replace="viewlet/getWebcode"/>
+  <ul class="list-group list-group-horizontal-sm">
+    <li tal:condition="view/webcode" class="list-group-item">
+      <span class="action_icon"></span>Webcode: <span tal:replace="view/webcode"/>
     </li>
-    <li tal:repeat="action view/actions"
-	tal:attributes="id python:'document-action-' + normalizeString(action['id'])">
-      <a href="" tal:attributes="href action/url; title action/description" tal:content="daction/title"/>
+    <li tal:condition="view/actions"
+	tal:repeat="action view/actions"
+	tal:attributes="id python:'document-action-' + normalizeString(action['id'])"
+	class="list-group-item">
+      <a href="" tal:attributes="href action/url; title action/description" tal:content="action/title"/>
     </li>
   </ul>
 </div>
