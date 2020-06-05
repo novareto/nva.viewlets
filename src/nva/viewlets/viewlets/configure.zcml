@@ -7,6 +7,16 @@
   -*- extra stuff goes here -*-
 
   <browser:viewlet
+     name="shariff-buttons-viewlet"
+     for="plone.app.contenttypes.interfaces.IDocument"
+     manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+     layer="nva.viewlets.interfaces.INvaViewletsLayer"
+     class=".shariff_buttons_viewlet.ShariffButtonsViewlet"
+     template="shariff-buttons-viewlet.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
      name="document-actions-viewlet"
      for="plone.app.contenttypes.interfaces.IDocument"
      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
