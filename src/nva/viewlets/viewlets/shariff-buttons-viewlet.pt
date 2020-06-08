@@ -1,3 +1,18 @@
-<div class="days_to_conf">
-    ${view/message}
+<div class="container mt-3 mb-3"
+     tal:define="navroot context/@@plone_portal_state/navigation_root_url">
+
+  <link tal:attributes="href string:${navroot}/++resource++nva.viewlets/shariff.min.css" rel="stylesheet">	
+
+  <div class="row">
+
+    <div class="col-6 mt-3 pt-3 border-top">	  
+
+      <h6>Diesen Beitrag teilen</h6>
+      <div class="shariff" tal:attributes="data-url python:context.absolute_url()" data-button-style="icon" data-theme="grey"
+	   data-services="[&quot;twitter&quot;,&quot;whatsapp&quot;,&quot;facebook&quot;,&quot;xing&quot;,&quot;linkedin&quot;,&quot;threema&quot;,&quot;telegram&quot;,&quot;mail&quot;]"></div>
+
+    </div>
+  </div>  
+	
+     <script tal:attributes="src string:${navroot}/++resource++nva.viewlets/shariff.min.js"></script>
 </div>

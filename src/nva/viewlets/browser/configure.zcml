@@ -12,11 +12,11 @@
       />
 
   <!-- Publish static files -->
-  <plone:static
-      name="nva.viewlets"
-      type="plone"
-      directory="static"
-      />
+
+  <browser:resourceDirectory
+    name="nva.viewlets"
+    directory="static" />
+
 
   <browser:viewletManager
     name="nva.contentcards"
