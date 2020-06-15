@@ -1,4 +1,4 @@
-<div class="bd-example mt-n5" tal:define="titelbilder view/get_titelbilder" tal:condition="python:len(titelbilder) > 1">
+<div class="bd-example" tal:define="titelbilder view/get_titelbilder" tal:condition="python:len(titelbilder) > 1">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -40,7 +40,7 @@
   </div>
 </div>
 <div tal:define="titelbilder view/get_titelbilder;titelbild python:titelbilder[0]" tal:condition="python:len(titelbilder) == 1" 
-	class="figure mt-n5 mb-3">
+	class="figure mb-3">
   <a href="#" tal:attributes="href titelbild/reference; title titelbild/reftitle">
   <div class="card bg-dark text-white">
     <img class="card-img" tal:attributes="src titelbild/imgsrc; alt titelbild/description">

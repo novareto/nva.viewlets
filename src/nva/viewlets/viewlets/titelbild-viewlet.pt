@@ -1,4 +1,4 @@
-<div class="bd-example mt-n5" tal:define="titelbilder view/get_titelbilder" 
+<div class="bd-example" tal:define="titelbilder view/get_titelbilder" 
      tal:condition="python:context.viewlet == 'header' and len(titelbilder) > 1">
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
@@ -39,7 +39,7 @@
   </div>
 </div>
 <figure tal:condition="python:context.viewlet == 'header' and len(view.get_titelbilder()) == 1" 
-	class="figure mt-n5">
+	class="figure">
   <a tal:define="titelbild python:view.get_titelbilder()[0]" href="#" tal:attributes="href titelbild/reference; title titelbild/reftitle">
   <img tal:attributes="src titelbild/imgsrc; title titelbild/title; alt titelbild/description" class="figure-img img-fluid rounded">
   </a>
